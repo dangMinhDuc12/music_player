@@ -1,3 +1,5 @@
+import songs from './music.js';
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const playList = $('.playlist');
@@ -21,27 +23,7 @@ const app = {
   isRandom: false,
   isRepeat: false,
   config: JSON.parse(localStorage.getItem(configKey)) || {},
-  songs: [
-    {
-      name: 'Có Hẹn Với Thanh Xuân',
-      singer: 'Monstar',
-      path: './assets/music/chvtx.mp3',
-      image: './assets/img/chvtx.jpg',
-    },
-    {
-      name: 'Gác Lại Âu Lo',
-      singer: 'Dalab - Miu Lê',
-      path: './assets/music/glal.mp3',
-      image: './assets/img/glal.jpg',
-    },
-    {
-      name: 'Next Level',
-      singer: 'Aespa',
-      path: './assets/music/nl.mp3',
-      image: './assets/img/nl.jpg',
-    },
-  ],
-
+  songs,
   setConfig(key, value) {
     this.config[key] = value;
     localStorage.setItem(configKey, JSON.stringify(this.config));
